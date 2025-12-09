@@ -54,7 +54,10 @@ else
 fi
 
 # 提示输入域名
-read -p "请输入需要签证书的域名（如 speedtest.2333001.xyz）: " DOMAIN
+DOMAIN="$1"
+if [ -z "$DOMAIN" ]; then
+    read -p "请输入需要签证书的域名（如 example.com）: " DOMAIN
+fi
 if [ -z "$DOMAIN" ]; then
     echo "域名不能为空"
     exit 1
