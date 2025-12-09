@@ -2,7 +2,7 @@
 set -e
 
 # -----------------------------
-# 一键安装 nginx + acme.sh 自动签证书
+# 一键安装 nginx + acme.sh 自动签证书 (交互式)
 # -----------------------------
 
 # 检查是否 root
@@ -53,11 +53,9 @@ else
     echo "acme.sh 已安装"
 fi
 
-# 提示输入域名
-DOMAIN="$1"
-if [ -z "$DOMAIN" ]; then
-    read -p "请输入需要签证书的域名（如 example.com）: " DOMAIN
-fi
+# 交互式输入域名
+echo
+read -p "请输入需要签证书的域名（如 example.xyz）: " DOMAIN < /dev/tty
 if [ -z "$DOMAIN" ]; then
     echo "域名不能为空"
     exit 1
