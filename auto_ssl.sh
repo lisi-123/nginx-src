@@ -53,6 +53,10 @@ else
     echo "acme.sh 已安装"
 fi
 
+# 自动生成随机邮箱注册 ZeroSSL
+ACME_EMAIL="acme_$(date +%s)_$RANDOM@gmail.com"
+~/.acme.sh/acme.sh --register-account -m "$ACME_EMAIL" || true
+
 # 交互式输入域名
 echo
 read -p "请输入需要签证书的域名（如 example.xyz）: " DOMAIN < /dev/tty
