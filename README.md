@@ -4,6 +4,8 @@
 
 
 ```bash
-wget -O - https://raw.githubusercontent.com/lisi-123/nginx-src/main/auto_ssl.sh | bash
+wget -O auto_ssl.sh https://raw.githubusercontent.com/lisi-123/nginx-src/main/auto_ssl.sh
+chmod +x auto_ssl.sh
+./auto_ssl.sh
 
 ```
